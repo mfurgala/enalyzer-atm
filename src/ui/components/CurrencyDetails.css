@@ -1,0 +1,45 @@
+.currencyColumnContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 15px;
+}
+
+.currencyElementContainer {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ffffff;
+  border-bottom: none;
+  padding: 15px 20px;
+  min-width: 280px;
+  justify-content: flex-start;
+}
+
+.currencyElementContainer:last-child {
+  border-bottom: 1px solid #ffffff
+}
+
+.billImage {
+  width: 80px;
+  margin-right: 50px;
+}
+
+.circleContainer {
+  margin-right: 50px;
+  width: 80px;
+  height: 43px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 30px;
+  border-radius: 40px;
+  background-color: #ffffff;
+  height: 30px;
+}
+
+.currencyDetailsText{
+  font-size: 30px;
+}

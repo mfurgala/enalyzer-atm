@@ -1,0 +1,114 @@
+.selectAmountContainer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.selectAmountText {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.currencyInputContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 47px 0px;
+}
+
+.currencyText{
+  font-weight: bold;
+}
+
+.pinNumbersContainer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+}
+
+.baseCircleButton {
+  color: #ffffff;
+  background-color: var(--primary-color);
+  height: 50px;
+  border-radius: 25px;
+  border: 1px solid #ffffff;
+  transition: background-color 250ms linear;
+  margin: 10px;
+}
+
+.baseCircleButton:not(:disabled):hover, .makeActive {
+  background-color: #ffffff;
+  color: var(--primary-color);
+}
+
+.numberButton {
+ width: 50px;
+ font-size: 30px;
+}
+
+.numberButton:active {
+  background-color: #ffffff;
+  color: var(--primary-color);
+  border-radius: 30px;
+  margin: 5px 5px;
+  animation-duration: 100ms;
+  animation-name: numberButtonAnimation;
+  animation-fill-mode: both;
+}
+
+@keyframes numberButtonAnimation {
+  0% {width:50px; height: 50px; margin: 10px}
+  100% {width:60px; height: 60px}
+}
+
+.submitButton {
+  width: 190px;
+  font-size: 20px;
+  font-weight: bolder;
+  margin-top: 40px;
+
+}
+
+.submitButton:disabled{
+  color: #93d8e4;
+}
+
+.numberInput {
+  border: none;
+  background-color: var(--primary-color);
+  height: 40px;
+  margin-left: 5px;
+  font-size: 40px;
+  color: #ffffff;
+  width: 150px;
+  border: none;
+  font-weight: bold;
+}
+
+.numberInput:focus-visible {
+  outline: none;
+}
+
+.imageButton {
+  margin: 10px;
+  border-radius: 25px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backArrowImage {
+  width: 40px;
+  height: 40px;
+  -webkit-user-drag: none;
+}
+
+
+
+
+
+

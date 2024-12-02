@@ -1,0 +1,35 @@
+.withdrawalTopContainer{
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 40px 40px 0px 40px;
+}
+
+.withdrawalBackArrowButton{
+  position: absolute;
+}
+
+.withdrawalCurrencyContainer {
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+.withdrawalThanksContainer {
+  margin-top: 30px;
+}
+.withdrawalText {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.withdrawalTextBlock {
+  display: block
+}
+
+.withdrawalSummaryText {
+  flex-grow:1;
+}
+
+.currencyDetailsContainer {
+  display: flex;
+  justify-content: center;
+}
