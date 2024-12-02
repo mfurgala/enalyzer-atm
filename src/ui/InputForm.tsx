@@ -16,7 +16,6 @@ export function InputForm({ setAmount }: props) {
         e.preventDefault()
         const parsedAmount = parseInt(inputAmount)
         setAmount(parsedAmount)
-        console.log("submitted", parsedAmount)
     }
     function onKeyDownForm(e: KeyboardEvent<HTMLFormElement>) {
         if (e.key === "Enter")
