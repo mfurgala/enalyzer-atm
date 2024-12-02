@@ -14,7 +14,7 @@
   margin-bottom: 60px;
 }
 .withdrawalThanksContainer {
-  margin-top: 30px;
+  margin: 20px 0px 10px 0px;
 }
 .withdrawalText {
   font-size: 20px;
@@ -32,4 +32,16 @@
 .currencyDetailsContainer {
   display: flex;
   justify-content: center;
+}
+
+@media only screen and (max-width: 1023px){
+  .currencyDetailsContainer {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 450px){
+  .withdrawalTopContainer {
+    margin: 40px 0px 0px 0px;
+  }
 }
