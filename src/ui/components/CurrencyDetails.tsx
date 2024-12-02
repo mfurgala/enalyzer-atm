@@ -1,6 +1,7 @@
 import "./CurrencyDetails.css"
 import billIcon from "../../assets/bill-icon.png"
 import { currencyCount } from "../../types"
+import { ATM } from "../../backend/ATM"
 
 type props = {
     currency: currencyCount
@@ -11,13 +12,13 @@ export function CurrencyDetails({ currency, currencyType }: props) {
     let allAvailableCurrency;
     switch (currencyType) {
         case "notes":
-            allAvailableCurrency = [50, 100, 200, 500, 1000]
+            allAvailableCurrency = ATM.notes
             break;
         case "bigCoins":
-            allAvailableCurrency = [2, 5, 20]
+            allAvailableCurrency = ATM.bigCoins
             break;
         case "smallCoins":
-            allAvailableCurrency = [1, 10]
+            allAvailableCurrency = ATM.smallCoins
             break;
     }
     allAvailableCurrency.sort((a, b) => b - a)
