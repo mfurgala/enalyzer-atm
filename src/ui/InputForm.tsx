@@ -1,5 +1,5 @@
 import "./InputForm.css"
-import { FormEvent, useRef, useState, KeyboardEvent, ChangeEvent } from "react"
+import { FormEvent, useRef, useState, KeyboardEvent, ChangeEvent, useEffect } from "react"
 import backArrowIcon from "../assets/back-arrow-icon.png"
 
 type props = {
@@ -11,6 +11,10 @@ export function InputForm({ setAmount }: props) {
     const inputRef = useRef<HTMLInputElement>(null)
     const pinNumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
     const keyboardKeys = [...pinNumbers, "0", "Backspace"]
+
+    useEffect(() => {
+        inputRef.current?.focus()
+    }, [inputAmount])
 
     function onSubmitForm(e: FormEvent<HTMLFormElement>) {
         e.preventDefault()
@@ -37,19 +41,17 @@ export function InputForm({ setAmount }: props) {
     }
     function onClickPinNumber(number: string, event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         event.preventDefault()
-        inputRef.current?.focus()
-        if (inputAmount.length === 6) return
+        if (inputAmount.length === 6) return inputRef.current?.focus()
         setInputAmount(prev => prev + number)
     }
     function onClickImageButton(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         event.preventDefault()
-        inputRef.current?.focus()
+        if (inputAmount.length === 0) return inputRef.current?.focus()
         setInputAmount(prev => prev.slice(0, prev.length - 1))
     }
     function onClick0PinNumber(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         event.preventDefault()
-        inputRef.current?.focus()
-        if (inputAmount.length === 0 || inputAmount.length === 6) return
+        if (inputAmount.length === 0 || inputAmount.length === 6) return inputRef.current?.focus()
         setInputAmount(prev => prev + "0")
     }
 
@@ -61,7 +63,7 @@ export function InputForm({ setAmount }: props) {
             <form onSubmit={onSubmitForm} onKeyDown={onKeyDownForm}>
                 <div className="currencyInputContainer">
                     <span className="currencyText">£ </span>
-                    <input maxLength={6} className="numberInput" ref={inputRef} autoFocus type="text" value={inputAmount}
+                    <input maxLength={6} className="numberInput" ref={inputRef} type="text" value={inputAmount}
                         onKeyDown={onKeyDownInput}
                         onKeyUp={onKeyUpInput}
                         onChange={onChangeInput} />
