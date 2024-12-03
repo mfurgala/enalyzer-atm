@@ -18,7 +18,7 @@ export function InputForm({ setAmount }: props) {
         setAmount(parsedAmount)
     }
     function onKeyDownForm(e: KeyboardEvent<HTMLFormElement>) {
-        if (e.key === "Enter")
+        if (e.key === "Enter" && inputAmount.length > 0)
             onSubmitForm(e)
     }
     function onKeyDownInput(e: KeyboardEvent<HTMLInputElement>) {
