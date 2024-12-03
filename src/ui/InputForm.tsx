@@ -63,7 +63,7 @@ export function InputForm({ setAmount }: props) {
             <form onSubmit={onSubmitForm} onKeyDown={onKeyDownForm}>
                 <div className="currencyInputContainer">
                     <span className="currencyText">£ </span>
-                    <input maxLength={6} className="numberInput" ref={inputRef} type="text" value={inputAmount}
+                    <input maxLength={6} className="numberInput" inputMode="none" ref={inputRef} type="text" value={inputAmount}
                         onKeyDown={onKeyDownInput}
                         onKeyUp={onKeyUpInput}
                         onChange={onChangeInput} />

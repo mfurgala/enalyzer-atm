@@ -36,9 +36,11 @@
   margin: 10px;
 }
 
-.baseCircleButton:not(:disabled):hover, .makeActive {
-  background-color: #ffffff;
-  color: var(--primary-color);
+@media (hover: hover) {
+  .baseCircleButton:not(:disabled):hover, .makeActive {
+    background-color: #ffffff;
+    color: var(--primary-color);
+  }
 }
 
 .numberButton {
@@ -54,6 +56,17 @@
   animation-duration: 100ms;
   animation-name: numberButtonAnimation;
   animation-fill-mode: both;
+}
+
+@media (hover: none){
+  .baseCircleButton {
+    transition: none;
+   }
+
+  .numberButton:active {
+    animation-name: none;
+    margin: 10px;
+   }
 }
 
 @keyframes numberButtonAnimation {
