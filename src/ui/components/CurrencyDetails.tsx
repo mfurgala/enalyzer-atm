@@ -9,19 +9,7 @@ type props = {
 }
 
 export function CurrencyDetails({ currency, currencyType }: props) {
-    let allAvailableCurrency;
-    switch (currencyType) {
-        case "notes":
-            allAvailableCurrency = ATM.notes
-            break;
-        case "bigCoins":
-            allAvailableCurrency = ATM.bigCoins
-            break;
-        case "smallCoins":
-            allAvailableCurrency = ATM.smallCoins
-            break;
-    }
-    allAvailableCurrency.sort((a, b) => b - a)
+    const allAvailableCurrency = ATM[currencyType].sort((a, b) => b - a)
     return (
         <>
             {Object.keys(currency).length > 0 && <div className="currencyColumnContainer">

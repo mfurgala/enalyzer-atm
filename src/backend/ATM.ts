@@ -27,6 +27,8 @@ export class ATM {
                 _amount = _amount % currency
             }
         })
+        if (_amount !== 0)
+            throw new Error("Amount cannot be withdrawn")
         return result
     }
 }
